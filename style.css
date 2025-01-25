@@ -1,92 +1,160 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: red;
-}
-
-#princ{
-    display: grid;
-    grid-template-areas: "logo menu horaire recherche"
-                         "exc exc exc exc"
-                        "img img img img"
-    ;
-}
-
-#logo{
-    grid-area: logo;
-    background-color: white;
-    padding-left: 40px;
-}
-
-#menu{
-    grid-area: menu;
-    background-color: white;
-
-}
-
-#recherche{
-    grid-area: recherche;
-    background-color: white;
-    padding-top: 90px;
-}
-
-#img_princ{
-    grid-area: img;
-}
-
-#logo1{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 78px;
-}
-
-#exception{
-    grid-area: exc;
-    background-color: black;
-    color: white;
-    text-align: center;
-}
-
-#horaire{
-    grid-area: horaire;
-    background-color: white;
-    text-align: center;
-    padding-top: 85px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-#horairetxt{
-    background-color: #F4E500;
-    padding: 10px;
-    border-radius: 8%;
-}
-
-#horairegras{
-    font-weight: bold;
-}
-
-#img_princ{
-    margin-top: 15px;
-}
-
-#menup li{
-    list-style-type: none;
-}
-
-#menup{
+header div {
     display: flex;
-    padding: 0;
-    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    font-size: 10px;
 }
 
-#menup a{
-    padding-top: 90px;
-    display:  block;
+/* menu */
+
+header #menu {
+    position: relative;
+    gap: 0.5em;
+    font-size: 0.2em;
+}
+
+header img {
+    padding-bottom: 2em;
+}
+
+header #logo {
+    margin-left: 1em;
+    width: 20%;
+    height: auto;
+    object-fit: contain;
+}
+
+header a {
     text-decoration: none;
-    text-align: center;
-    font-size: 22px;
-    font-family: "Albert Sans", serif;
-    font-weight: bold;
     color: black;
+    width: 10%;
+    padding: 2em;
+    margin-left: 3em;
+    margin-bottom: 2em;
 }
 
+header #horaire {
+    background-color: #F4E500;
+    border-radius: 1em;
+    padding: 1em 4.5em;
+    margin-bottom: 5em;
+    margin-left: 5em;
+}
+
+header #loupe {
+    width: 4em;
+    height: auto;
+    padding-left: 0.5em;
+    margin-bottom: 1.6em;
+
+}
+
+/* ouvertureExceptionnelle */
+
+header #ouvertureExceptionnelle {
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    font-size: 0.5em;
+}
+
+/* Pour fond étendu sur les côtés de menu et ouvertureExceptionnelle*/
+
+header div::before {
+    content: '';
+    position: absolute;
+    left: -25%;
+    width: 150%;
+    height: 100%;
+    z-index: -1;
+}
+
+header #ouvertureExceptionnelle:before {
+    background-color: black;
+}
+
+header #menu:before {
+    top: -65%;
+    height: 200%;
+    background-color: white;
+}
+
+/* hashtag */
+
+/*
+
+#hashtag {
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+}
+
+#hashtag p {
+    writing-mode: sideways-lr;
+    margin: 0;
+    font-size: 0.4em;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    -webkit-text-stroke: 0.003em black;
+    letter-spacing: -0.09em;
+    margin-bottom: 1em;
+}
+
+#hashtag img {
+    width: 9%;
+    margin: 0.1em 0em;
+}
+
+*/
+
+@media(min-width: 600px) {
+    header div {
+        font-size: 32px;
+        margin-bottom: -2em;
+    }
+
+    header #menu {
+        font-size: 1em;
+    }
+
+    header a {
+        width: max-content;
+        margin-left: 1em;
+        margin-bottom: 0;
+        padding: 2em 0.5em;
+    }
+
+    header #logo {
+        width: 10%;
+        margin-left: 2em;
+        margin-right: 4%;
+    }
+
+    header #horaire {
+        padding: 0.8em 1.5em;
+        margin-bottom: 3.5em;
+        margin-left: 5em;
+        border-radius: 0.6em;
+    }
+
+    header #loupe {
+        width: 2em;
+        padding-left: 0.5em;
+        margin-top: 1.3em;
+    }
+
+    header #ouvertureExceptionnelle {
+        font-size: 1em;
+        margin-bottom: 1em;
+    }
+
+    header #menu:before {
+        top: -85%;
+        height: 185%;
+    }
+}
