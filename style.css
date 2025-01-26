@@ -1,3 +1,13 @@
+html {
+    font-family: "Albert Sans", serif;
+}
+
+body {
+    background-color: green;
+}
+
+/* header */
+
 header div {
     display: flex;
     flex-direction: row;
@@ -19,9 +29,10 @@ header img {
     padding-bottom: 2em;
 }
 
-header #logo {
+header .logo {
     margin-left: 1em;
-    width: 20%;
+    margin-right: 0.5em;
+    width: 15%;
     height: auto;
     object-fit: contain;
 }
@@ -29,6 +40,7 @@ header #logo {
 header a {
     text-decoration: none;
     color: black;
+    font-weight: bold;
     width: 10%;
     padding: 2em;
     margin-left: 3em;
@@ -61,7 +73,7 @@ header #ouvertureExceptionnelle {
     font-size: 0.5em;
 }
 
-/* Pour fond étendu sur les côtés de menu et ouvertureExceptionnelle*/
+/* Pour fond étendu sur les côtés de menu et ouvertureExceptionnelle */
 
 header div::before {
     content: '';
@@ -112,6 +124,110 @@ header #menu:before {
 
 */
 
+/* footer */
+
+
+footer {
+    position: relative;
+    z-index: 1;
+    font-size: 10px;
+    margin-top: 4em;
+}
+
+#footerContent, #footerEnd {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 2%;
+}
+
+#footerLeft {
+    width: 30%
+}
+
+footer .logo {
+    width: 40%;
+    height: auto;
+}
+
+footer h1 {
+    font-size: 0.9em;
+}
+
+footer a, footer p {
+    text-decoration: none;
+    font-size: 0.8em;
+    color: black;
+}
+
+footer img {
+    width: 10%;
+    height: auto;
+    object-fit: contain;
+}
+
+footer #telephoneContact, footer #mailContact {
+    border-radius: 1em;
+    border: 0.1em solid black;
+    padding: 0.7em 0.5em;
+    width: 50%;
+    text-align: center;
+}
+
+footer #telephoneContact{
+   border-color: gray;
+   width: 80%;
+}
+
+footer #telephoneContact img {
+    width: 8%;
+    padding-right: 0.4em;
+}
+
+footer #mailContact {
+    margin-right: 10em;
+}
+
+footer #mailContact img {
+    width: 15%;
+    padding-right: 0.4em;
+}
+
+footer .footerHashtag {
+    font-size: 1.3em;
+    font-style: italic;
+    color: black;
+    font-weight: bold;
+}
+
+footer .footerHashtag #partage {
+    color: red;
+}
+
+footer input {
+    border-radius: 1.5em;
+    border: 0.2em solid black;
+    padding: 0.7em 1em;
+    font-size: 0.8em;
+}
+
+footer #footerEnd {
+    gap: 3em
+}
+
+/* Pour fond étendu sur les côtés du footer */
+
+footer:before {
+    bottom: -5%;
+    height: 120%;
+    content: '';
+    position: absolute;
+    left: -25%;
+    width: 150%;
+    z-index: -1;
+    background-color: white;
+}
+
 @media(min-width: 600px) {
     header div {
         font-size: 32px;
@@ -129,7 +245,7 @@ header #menu:before {
         padding: 2em 0.5em;
     }
 
-    header #logo {
+    header .logo {
         width: 10%;
         margin-left: 2em;
         margin-right: 4%;
@@ -157,43 +273,78 @@ header #menu:before {
         top: -85%;
         height: 185%;
     }
-}
 
+    footer {
+        font-size: 30px;
+    }
 
-/* MENU RESSOURCES */
+    #footerContent, #footerEnd {
+        margin-left: 3em;
+    }
+    
+    #footerLeft {
+        width: 30%
+    }
+    
+    footer .logo {
+        width: 30%;
+    }
+    
+    footer h1 {
+        font-size: 0.7em;
+    }
+    
+    footer a, footer p {
+        font-size: 0.5em;
+    }
+    
+    footer img {
+        width: 8%;
+        height: auto;
+        object-fit: contain;
+    }
+    
+    footer #telephoneContact, footer #mailContact {
+        border-radius: 1em;
+        border-width: 0.1em;
+        padding: 0.7em 0.5em;
+        width: 20%;
+        text-align: left;
+    }
+    
+    footer #telephoneContact{
+       width: 35%;
+       padding: 0.7em 0.5em;
+       padding-left: 1em;
+    }
+    
+    footer #telephoneContact img {
+        width: 8%;
+    }
+    
+    footer #mailContact img {
+        width: 15%;
+        padding-right: 0.4em;
+    }
+    
+    footer .footerHashtag {
+        font-size: 1.2em;
+    }
+    
+    footer input {
+        padding: 1em 1.5em;
+        font-size: 0.4em;
+    }
+    
+    footer #footerEnd {
+        margin-top: 2em;
+        gap: 3em
+    }
 
-#menuressources{
-    background-color: red;
-}
-
-/* FOOTER */
-
-
-#footer {
-    font-family: "Albert Sans", serif;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    z-index: 1;
-}
-
-footer input{
-    border-radius: 90px;
-    border: 3px solid #000000;
-    opacity: 1;
-    padding: 10px;
-}
-
-footer .titre{
-    font-weight: bold;
-}
-
-footer #logof{
-    width : 20%;
-    height: auto;
-}
-
-footer a {
-    text-decoration: none;
-    color: black;
+    footer:before {
+        bottom: -5%;
+        height: 120%;
+        content: '';
+        position: absolute;
+    }
 }
