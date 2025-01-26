@@ -149,7 +149,7 @@ header #menu:before {
     object-fit: contain;
 }
 
-/* DIV des ressources */
+/* DI des ressources */
 
 #menuRessources{
     display: flex;
@@ -186,7 +186,7 @@ header #menu:before {
 }
 
 
-/* DIV une envie de shopping */
+/* div une envie de shopping */
 
 #shopping{
     color: white;
