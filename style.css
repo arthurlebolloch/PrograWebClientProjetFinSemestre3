@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: green;
+    background-color: red;
 }
 
 /* header */
@@ -132,6 +132,7 @@ footer {
     z-index: 1;
     font-size: 10px;
     margin-top: 4em;
+    margin-left: 1em;
 }
 
 #footerContent, #footerEnd {
@@ -141,8 +142,13 @@ footer {
     gap: 2%;
 }
 
-#footerLeft {
-    width: 30%
+#footerContent{
+    gap: 10%;
+}
+
+#footerLeft{
+    margin-top: 20px;
+    margin-right: -100px;
 }
 
 footer .logo {
@@ -176,7 +182,7 @@ footer #telephoneContact, footer #mailContact {
 
 footer #telephoneContact{
    border-color: gray;
-   width: 80%;
+   width: fit-content;
 }
 
 footer #telephoneContact img {
@@ -184,9 +190,9 @@ footer #telephoneContact img {
     padding-right: 0.4em;
 }
 
-footer #mailContact {
-    margin-right: 10em;
-}
+footer #mailContact{
+    width: fit-content;
+ }
 
 footer #mailContact img {
     width: 15%;
@@ -281,10 +287,10 @@ footer:before {
     #footerContent, #footerEnd {
         margin-left: 3em;
     }
-    
+
     #footerLeft {
-        width: 30%
-    }
+        margin-right: -160px;
+     }
     
     footer .logo {
         width: 30%;
@@ -313,10 +319,16 @@ footer:before {
     }
     
     footer #telephoneContact{
-       width: 35%;
+       width: fit-content;
        padding: 0.7em 0.5em;
        padding-left: 1em;
     }
+
+    footer #mailContact{
+        width: fit-content;
+        padding: 0.7em 0.5em;
+        padding-left: 1em;
+     }
     
     footer #telephoneContact img {
         width: 8%;
@@ -338,7 +350,7 @@ footer:before {
     
     footer #footerEnd {
         margin-top: 2em;
-        gap: 3em
+        gap: 15em;
     }
 
     footer:before {
