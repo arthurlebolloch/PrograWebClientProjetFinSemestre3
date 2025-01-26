@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projet WEB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="afterHeader">
+        <div id="actus">
+            <h1><B>Actus &<span id="actusStrokes"><br>bons plans</B></span></h1>
+            <div id="actusSecondRow">
+                <a id="actusLink" href="">Toutes les actus & bons plans</a>
+                <div id="sliderNavigator">
+                    <a id="prev">&#x2190;</a>
+                    <div id="sliderIndicatorContainer">
+                        <div id="sliderIndicator"></div>
+                    </div>
+                    <a id="next">&#x2192;</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="sliderrow">
+            <div data-slide="1">
+                <p class="sliderDate">05/12/2022</p>
+                <h1>Concours Facebook<br>De nombreux lots à gagner<br></h1>
+                <div class="sliderHashtag">
+                    <p>#enmodeconcours</p>
+                </div>
+            </div>
+            <div data-slide="2">
+                <p class="sliderDate">10/11/2023</p>
+                <h1>Protégeons notre planète<br></h1>
+                <div class="sliderHashtag">
+                    <p>#enmodeprévention</p>
+                </div>
+            </div>
+            <div data-slide="3">
+                <img>
+                <p class="sliderDate">09/01/2023</p>
+                <h1>Une heure de parking offerte<br></h1>
+                <div class="sliderHashtag">
+                    <p>#enmodesoldes</p>
+                    <p>#bonsplans</p>
+                </div>
+            </div>
+            <div data-slide="4">
+                <p class="sliderDate">05/12/2022</p>
+                <h1>Concours Facebook<br>De nombreux lots à gagner<br></h1>
+                <div class="sliderHashtag">
+                    <p>#enmodeconcours</p>
+                </div>
+            </div>
+            <div data-slide="5">
+                <p class="sliderDate">10/11/2023</p>
+                <h1>Protégeons notre planète<br></h1>
+                <div class="sliderHashtag">
+                    <p>#enmodeprévention</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* afterHeader */
+
+        #afterHeader {
+            font-size: 10px;
+            width: 100%;
+            z-index: 1;
+        }
+
+        #actus {
+            color: white;
+            font-size: 0.5em;
+            display: flex;
+            flex-direction: row;
+            gap: 5em;
+        }
+
+        #actusSecondRow {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1.5em;
+        }
+
+        #actusSecondRow #actusLink {
+            padding: 0.5em;
+            background-color: white;
+            text-decoration: none;
+            border-radius: 0.5em;
+            color: red;
+            transition: padding 0.3s ease;
+            text-align: center;
+        }
+
+        #actusSecondRow #actusLink:hover {
+            padding: 0.7em;
+        }
+
+        #actus #actusStrokes {
+            -webkit-text-stroke: 0.02em white;
+            font-weight: bolder;
+            color: red;
+        }
+
+        /* Pour fond étendu sur les côtés de afterHeader */
+
+        #afterHeader::before {
+            content: '';
+            position: absolute;
+            left: -25%;
+            width: 150%;
+            height: 20%;
+            z-index: -1;
+            background-color: red;
+        }
+
+        /* Slider */
+
+        #sliderNavigator {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5em;
+        }
+
+        #prev,
+        #next {
+            cursor: pointer;
+            text-decoration: none;
+            text-align: right;
+            color: white;
+            vertical-align: middle;
+            font-size: 2em;
+        }
+
+        #sliderIndicatorContainer {
+            position: relative;
+            height: 0.15em;
+            width: 9em;
+            background-color: gray;
+            border-radius: 0.5em;
+            align-self: center;
+        }
+
+        #sliderIndicator {
+            height: 100%;
+            width: 0%;
+            background-color: white;
+            border-radius: 0.5em;
+            transition: width 0.5s ease;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        html {
+            font-family: "Albert Sans", serif;
+        }
+
+        #sliderrow {
+            overflow-x: auto;
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+            overflow: hidden;
+        }
+
+        #sliderrow>div[data-slide] {
+            scroll-snap-align: start;
+            height: 10em;
+            width: 7em;
+            padding: 0.7em;
+            border-radius: 1em;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        #sliderrow h1,
+        #sliderrow p {
+            font-size: 0.7em;
+            color: white;
+        }
+
+        #sliderrow .sliderDate,
+        #sliderrow .sliderHashtag {
+            font-size: 0.5em;
+        }
+
+        #sliderrow .sliderHashtag {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #sliderrow {
+            gap: 5px;
+        }
+
+        #sliderrow>div[data-slide="1"],
+        #sliderrow>div[data-slide="4"] {
+            background-image: url("ressources/shutterstock_1836563524.png");
+        }
+
+        #sliderrow>div[data-slide="2"],
+        #sliderrow>div[data-slide="5"] {
+            background-image: url("ressources/shutterstock_1211521729.png");
+        }
+
+        #sliderrow>div[data-slide="3"] {
+            background-image: url("ressources/10d1c64954f487ea77729fea232d8767.png");
+            color: black;
+            background-color: #e9e2d7;
+        }
+
+        #sliderrow>div[data-slide="3"] h1,
+        #sliderrow>div[data-slide="3"] p {
+            color: black;
+        }
+
+        @media(min-width: 600px) {
+            #afterHeader {
+                font-size: 32px;
+            }
+
+            #actus {
+                margin-left: 4em;
+            }
+
+            #actus #actusStrokes {
+                -webkit-text-stroke: 0.04em white;
+            }
+
+            #actusSecondRow #actusLink {
+                font-size: 0.7em;
+                margin-left: 13em;
+                padding: 0.5em 1.5em;
+                margin-bottom: 2.3em;
+                ;
+            }
+
+            #sliderIndicatorContainer {
+                width: 15em;
+            }
+
+            #actusSecondRow {
+                margin-left: 5em;
+            }
+
+            #afterHeader::before {
+            height: 65%;
+        }
+        }
+    </style>
+
+
+    <script defer src="script.js"></script>
+
+</body>
+
+</html>
