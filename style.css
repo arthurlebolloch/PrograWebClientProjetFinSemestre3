@@ -173,17 +173,18 @@ header #menu:before {
     flex-direction: row;
     position: relative;
     width: 100%;
-    gap: 0.2em;
+    gap: 0.9em;
     font-weight: bold;
     margin-top: 2.5em;
     color: white;
+    padding-left: 1em;
 }
 
 #menuRessources div {
     border: solid white 2px;
     border-radius: 10%;
     width: auto;
-    height: 7em;
+    height: 8em;
     font-size: 7px;
     padding-top: 1.5em;
     text-align: center;
@@ -210,6 +211,7 @@ header #menu:before {
     display: flex;
     flex-direction: row;
     gap: 5em;
+    padding-left: 1em;
 }
 
 #actusSecondRow {
@@ -444,6 +446,7 @@ header #menu:before {
     position: relative;
     margin: 0;
     margin-top: 25%;
+    padding-left: 1em;
 }
 
 #beforeFooter::before {
@@ -628,7 +631,6 @@ footer:before {
     background-color: white;
 }
 
-
 /* Sur écran autre que mobile
 *
 *
@@ -701,6 +703,7 @@ footer:before {
 
     #actus {
         margin-left: 4em;
+        gap: 0.5em;
     }
 
     #actus #actusStrokes {
@@ -772,6 +775,7 @@ footer:before {
     #logosBoutiques {
         gap: 1em;
         margin-bottom: 5em;
+        padding-left: 4em;
     }
 
     footer,
@@ -891,4 +895,25 @@ footer:before {
         content: '';
         position: absolute;
     }
+}
+
+/* Tablettes */
+
+@media (max-width: 768px) and (min-width: 481px) {
+    header div::before, #afterHeader::before, #beforeFooter::before {
+        width: 250%;
+    }
+
+    #shopping::before {
+        width: 265%;
+    }
+
+    footer::before {
+        width: 230%;
+    }
+
+    #sliderrow {
+        overflow:visible;
+    }
+    
 }

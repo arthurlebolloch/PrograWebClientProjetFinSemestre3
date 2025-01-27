@@ -1,4 +1,4 @@
-// Slider
+// Slider actus
 
 const sliderrow = document.getElementById('sliderrow');
 let currentIndex = 0;
